@@ -10,8 +10,8 @@ export const AppDataSource = new DataSource({
   username: process.env.MYSQL_USER || "root",
   password: process.env.MYSQL_PASSWORD || process.env.MYSQL_ROOT_PASSWORD,
   database: process.env.MYSQL_DATABASE,
-  entities: ["src/entities/*.entity.ts"],
-  synchronize: true
+  entities: ["./src/entities/*.ts"],
+  migrations: ["./src/migrations/*.ts"]
 })
 
 async function databaseInitialize() {
